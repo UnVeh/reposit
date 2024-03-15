@@ -1,0 +1,17 @@
+@startuml
+
+skinparam activity {
+    DiamondBackgroundColor LightBlue
+}
+start
+
+#AntiqueWhite:Нажать на иконку "Заливка";
+if (На холсте есть рисунок?) then (да)
+#Cornsilk:Нажать на область,
+закрашенную одним цветом;
+else (нет)
+#Cornsilk:Нажать на холст;
+endif
+#AntiqueWhite:Область заливки стала другого цвета;
+stop
+@enduml
