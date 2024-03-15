@@ -60,4 +60,7 @@
 * Пользователь нажимает на иконку настроек - приложение отображает экран настроек
 * Пользователь нажимает на кнопку exit - приложение закрывается
 
- * [Диаграмма активности](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
+___
+# Диаграммы
+ [Заливка](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png)
+ * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
