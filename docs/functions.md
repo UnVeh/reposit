@@ -72,7 +72,7 @@ ___
  </p>
 
  <div align="center">
-     [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
+     <[Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)/>
  </div>
  
  
