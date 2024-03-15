@@ -70,7 +70,7 @@ ___
  <p align="center">
    <img src="https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png" alt="1"/>
  </p>
- <p align="center">
-   <src="https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml" alt="Код"/>
- </p>
+ 
+ <center>[Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)</center>
+    
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
