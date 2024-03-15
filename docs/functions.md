@@ -62,5 +62,5 @@
 
 ___
 # Диаграммы
- [Заливка](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png)
+ ![Заливка](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
