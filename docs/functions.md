@@ -71,6 +71,6 @@ ___
    <img src="https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png" alt="1"/>
  </p>
  <p align="center">
-   <img src="https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml" alt="Код"/>
+   <src="https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml" alt="Код"/>
  </p>
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
