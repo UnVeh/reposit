@@ -1,0 +1,84 @@
+@startuml
+skinparam actor {
+    BackgroundColor OrangeRed/Orange
+    BorderColor Orange
+}
+
+skinparam usecase {
+    BackgroundColor Snow
+    BorderColor Black    
+}
+
+
+left to right direction
+
+actor User as User
+
+rectangle App #AliceBlue/LightBlue {
+
+rectangle "Главный экран" #APPLICATION {
+
+rectangle "Панель с инструментами" as ins #Gainsboro{
+    usecase "Настройки" as settings
+    usecase "Ластик" as erazer
+    usecase "Кисть" as brush
+    usecase "Заливка" as z
+    usecase "Фигура" as f
+    usecase "Палитра" as pal
+   
+    User --> settings
+    User --> erazer
+    User --> brush
+    User --> z
+    User --> f
+    User --> pal
+}
+rectangle "Панель палитры" as pp #PeachPuff {
+    pp ..> brush : {"Изменить цвет"}
+    pp ..> z : {"Изменить цвет"}
+    pp ..> f : {"Изменить цвет"}
+    pal ..> pp
+}
+rectangle "Панель фигур" #LightGreen {
+    usecase "Круг" as el
+    usecase "Треугольник" as tr 
+    usecase "Квадрат" as sq
+
+}
+rectangle "Холст" as Canvas #LightCyan{
+    usecase line
+    usecase "Редактирование фигуры" as redf
+    tr ..> redf
+    el ..> redf
+    sq ..> redf
+}
+
+}
+rectangle "Экран настроек" #Plum{
+    usecase Undo
+    usecase Save
+    usecase New
+    usecase Open
+    usecase "Change size" as CS
+    settings ..> "Экран настроек"
+    New ..> "Главный экран"
+    Open ..> "Главный экран"
+
+}
+
+}
+
+brush ..> line 
+erazer ..> line 
+z ..> Canvas
+z ..> line 
+
+Undo ..> Canvas
+Save ..> Canvas
+
+CS ..> brush
+f ..> "Панель фигур"
+
+
+@enduml
+
