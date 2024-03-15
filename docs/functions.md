@@ -64,9 +64,11 @@ ___
 # Диаграммы
 
  ![Диаграмма вариантов использования приложения](https://github.com/UnVeh/reposit/blob/master/diagrams/func.png)
+ 
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/func.puml)
 
  <p align="center">
    <img src="https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png" alt="1"/>
  </p>
+ 
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
