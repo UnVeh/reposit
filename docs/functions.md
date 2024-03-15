@@ -59,3 +59,23 @@
 
 * Пользователь нажимает на иконку настроек - приложение отображает экран настроек
 * Пользователь нажимает на кнопку exit - приложение закрывается
+
+```mermaid
+@startuml
+
+skinparam activity {
+    DiamondBackgroundColor LightBlue
+}
+start
+
+#AntiqueWhite:Нажать на иконку "Заливка";
+if (На холсте есть рисунок?) then (да) 
+#Cornsilk:Нажать на область,
+закрашенную одним цветом;
+else (нет)
+#Cornsilk:Нажать на холст;
+endif
+#AntiqueWhite:Область заливки стала другого цвета;
+stop
+@enduml
+```
