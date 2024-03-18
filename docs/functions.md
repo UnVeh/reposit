@@ -80,6 +80,11 @@ ___
   ![Фигуры](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
 
+___
+
+![Цвет](https://github.com/UnVeh/reposit/blob/master/diagrams/activity3.png)
+ * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity3.puml)
+
  
  
     
