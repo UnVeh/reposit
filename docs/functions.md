@@ -71,7 +71,10 @@ ___
  
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/func.puml)
 
-  ![Заливка](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png)
+ * ![Начало рисования](https://github.com/UnVeh/reposit/blob/master/diagrams/activity2.png)
+ * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity2.puml)
+
+  ![Фигуры](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
 
  
