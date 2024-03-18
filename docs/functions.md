@@ -85,6 +85,11 @@ ___
 ![Цвет](https://github.com/UnVeh/reposit/blob/master/diagrams/activity3.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity3.puml)
 
+___
+
+![Change](https://github.com/UnVeh/reposit/blob/master/diagrams/activity4.png)
+ * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity4.puml)
+
  
  
     
