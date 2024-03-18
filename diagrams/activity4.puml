@@ -1,0 +1,21 @@
+@startuml
+skinparam activity {
+    DiamondBackgroundColor LightBlue
+}
+start
+
+#AntiqueWhite:Нажать на цифру в буфере, соответствующую обьекту;
+#AntiqueWhite:Нажать кнопку "О" или "Л";
+if (Выбрать цвет из имеющихся) then (да);
+else (нет)
+#Cornsilk:нажать на иконку палитры;
+#Cornsilk:Выбрать цвет;
+endif
+if (Внутренний цвет фигуры - выбранный цвет?) then (да)
+#Cornsilk:Была нажата кнопка "О";
+else (нет)
+#Cornsilk:Была нажата кнопка "Л";
+endif
+#AntiqueWhite:Фигура поменяла цвет;
+stop
+@enduml
