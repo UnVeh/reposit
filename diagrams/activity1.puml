@@ -1,17 +1,19 @@
 @startuml
-
 skinparam activity {
     DiamondBackgroundColor LightBlue
 }
 start
 
-#AntiqueWhite:Нажать на иконку "Заливка";
-if (На холсте есть рисунок?) then (да)
-#Cornsilk:Нажать на область,
-закрашенную одним цветом;
+#AntiqueWhite:Нажать на иконку фигуры;
+if (Зажата левая клавиша мыши на холсте?) then (да)
 else (нет)
-#Cornsilk:Нажать на холст;
+#Cornsilk:Зажать левую клавишу миши на холсте;
 endif
-#AntiqueWhite:Область заливки стала другого цвета;
+#AntiqueWhite:Двинуть мышь в одно из направлений;
+if (Кнопка мыши не зажата?) then (да)
+else (нет)
+#Cornsilk:Отпустить кнопку миши;
+endif
+#AntiqueWhite:Фигура приняла статическое положение на холсте;
 stop
 @enduml
