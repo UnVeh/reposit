@@ -4,6 +4,7 @@ skinparam actor {
     BorderColor Orange
 }
 
+
 skinparam usecase {
     BackgroundColor Snow
     BorderColor Black    
@@ -15,70 +16,66 @@ left to right direction
 actor User as User
 
 rectangle App #AliceBlue/LightBlue {
-
-rectangle "Главный экран" #APPLICATION {
+    usecase Canvas
 
 rectangle "Панель с инструментами" as ins #Gainsboro{
-    usecase "Настройки" as settings
-    usecase "Ластик" as erazer
-    usecase "Кисть" as brush
-    usecase "Заливка" as z
-    usecase "Фигура" as f
+rectangle "Панель с цветами" as col #Bisque {
+    usecase "Цвета" 
     usecase "Палитра" as pal
-   
-    User --> settings
-    User --> erazer
+    usecase "Кнопки изменения цвета" 
+    User --> col
+}
+
+    usecase "Ластик" as eraser
+    usecase "Кисть" as brush
+    usecase "Буфер" as bf
+
+    User --> eraser
     User --> brush
-    User --> z
-    User --> f
-    User --> pal
+    User --> bf
+    col ..> brush
+    col ..> "Фигуры"
+    eraser ..> Canvas
+    brush ..> Canvas
+    bf ..> brush
+    bf ..> eraser
+    bf ..> "Фигуры"
+
 }
-rectangle "Панель палитры" as pp #PeachPuff {
-    pp ..> brush : {"Изменить цвет"}
-    pp ..> z : {"Изменить цвет"}
-    pp ..> f : {"Изменить цвет"}
-    pal ..> pp
-}
-rectangle "Панель фигур" #LightGreen {
+
+rectangle "Фигуры" #LightGreen {
     usecase "Круг" as el
     usecase "Треугольник" as tr 
     usecase "Квадрат" as sq
+    "Фигуры" ..> Canvas
+    User --> "Фигуры"
+    
 
 }
-rectangle "Холст" as Canvas #LightCyan{
-    usecase line
-    usecase "Редактирование фигуры" as redf
-    tr ..> redf
-    el ..> redf
-    sq ..> redf
-}
 
-}
-rectangle "Экран настроек" #Plum{
-    usecase Undo
+rectangle "Меню" #Plum{
+rectangle File {
     usecase Save
-    usecase New
     usecase Open
-    usecase "Change size" as CS
-    settings ..> "Экран настроек"
-    New ..> "Главный экран"
-    Open ..> "Главный экран"
+    usecase Exit
 
+    Open ..> Canvas
+    Save ..> Canvas
+    Exit ..> Canvas
+    User --> "Меню"
+}
+
+rectangle Edit {
+    usecase Undo
+    usecase Clean
+
+    Undo ..> Canvas
+    Clean ..> Canvas
 }
 
 }
+}
 
-brush ..> line 
-erazer ..> line 
-z ..> Canvas
-z ..> line 
-
-Undo ..> Canvas
-Save ..> Canvas
-
-CS ..> brush
-f ..> "Панель фигур"
-
-
+    
 @enduml
 
