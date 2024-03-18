@@ -5,10 +5,7 @@ skinparam activity {
 start
 
 #AntiqueWhite:Нажать на иконку кисти или ластика;
-if (Нажата иконка кисти?) then (да)
-else (нет)
-#Cornsilk:Нажата иконка ластика;
-endif
+
 #AntiqueWhite:Нажать левой кнопкой мыши на холст;
 #AntiqueWhite:Двигать мышкой на хосте;
 if (Появилась линия черного цвета) then (да)
