@@ -80,6 +80,8 @@ ___
   ![Фигуры](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
 
+ * Описание: пользователь нажимает на иконку одной из фигур(треугольник, круг, прямоугольник), расположенных на панели инструментов. Затем пользователь нажимает на холст и тянет мышь в одно из направлений, при этом видно изменение формы фигуры. Затем пользователь отпускает кнопку миши и фигура принимает статическое положение.
+
 ___
 
 ![Цвет](https://github.com/UnVeh/reposit/blob/master/diagrams/activity3.png)
