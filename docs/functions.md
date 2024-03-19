@@ -67,6 +67,8 @@
 ___
 # Диаграммы
 
+Диаграмма № 1. Варианты использования приложения
+
  ![Диаграмма вариантов использования приложения](https://github.com/UnVeh/reposit/blob/master/diagrams/funct.png)
  
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/func.puml)
@@ -76,6 +78,7 @@ ___
 2. Панель Меню. На панели меню расположены кнопки File и Edit. Когда пользователь нажимает на кнопку File, открывается поле с кнопками(Save, Open, Exit). Нажав на Save пользователь может сохранить рисунок. Нажав на кнопку Open пользователь может вывести картинку на холст. Нажав на кнопку Exit пользователь выходит из приложения.
 ___
 
+Диаграмма № 2. Начало рисования 
 ![Начало рисования](https://github.com/UnVeh/reposit/blob/master/diagrams/activity2.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity2.puml)
 
@@ -84,6 +87,8 @@ ___
 
 ___
 
+Диаграмма № 3. Использование фигур
+
   ![Фигуры](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity1.puml)
 
@@ -91,10 +96,14 @@ ___
 
 ___
 
+Диаграмма № 3. Использование цвета
+
 ![Цвет](https://github.com/UnVeh/reposit/blob/master/diagrams/activity3.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity3.puml)
 
 ___
+
+Диаграмма № 4. Изменение цвета
 
 ![Change](https://github.com/UnVeh/reposit/blob/master/diagrams/activity4.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity4.puml)
