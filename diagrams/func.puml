@@ -16,16 +16,37 @@ left to right direction
 actor User as User
 
 rectangle App #AliceBlue/LightBlue {
-    usecase Canvas
+    usecase "Холст" as Canvas
+rectangle "Меню" #LemonChiffon{
+rectangle File #Plum {
+    usecase Save
+    usecase Open
+    usecase Exit
+
+    Canvas <.. File
+    User --> "Меню"
+}
+
+rectangle Edit #Plum {
+    usecase Undo
+    usecase Clean
+
+    Canvas <.. Edit
+}
+
+}
 
 rectangle "Панель с инструментами" as ins #Gainsboro{
 rectangle "Панель с цветами" as col #Bisque {
     usecase "Цвета" 
     usecase "Палитра" as pal
     usecase "Кнопки изменения цвета" 
+    
+     
     User --> col
 }
-
+    usecase "Кнопки изменения размера" as ch
+    usecase "Фигуры" as f
     usecase "Ластик" as eraser
     usecase "Кисть" as brush
     usecase "Буфер" as bf
@@ -33,49 +54,22 @@ rectangle "Панель с цветами" as col #Bisque {
     User --> eraser
     User --> brush
     User --> bf
+    User --> f
+    User --> ch
+    col ..> f
+    ch ..> brush
+    ch ..> eraser
+    f ..> bf
     col ..> brush
-    col ..> "Фигуры"
+    f ..> Canvas
+
     eraser ..> Canvas
     brush ..> Canvas
-    bf ..> brush
-    bf ..> eraser
-    bf ..> "Фигуры"
-
-}
-
-rectangle "Фигуры" #LightGreen {
-    usecase "Круг" as el
-    usecase "Треугольник" as tr 
-    usecase "Квадрат" as sq
-    "Фигуры" ..> Canvas
-    User --> "Фигуры"
-    
-
-}
-
-rectangle "Меню" #Plum{
-rectangle File {
-    usecase Save
-    usecase Open
-    usecase Exit
-
-    Open ..> Canvas
-    Save ..> Canvas
-    Exit ..> Canvas
-    User --> "Меню"
-}
-
-rectangle Edit {
-    usecase Undo
-    usecase Clean
-
-    Undo ..> Canvas
-    Clean ..> Canvas
-}
-
+    brush ..> bf
+    brush ..> bf
+    bf ..> col
 }
 }
 
     
 @enduml
-
