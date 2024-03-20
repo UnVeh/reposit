@@ -79,6 +79,7 @@ ___
 ___
 
 Диаграмма № 2. Начало рисования 
+
 ![Начало рисования](https://github.com/UnVeh/reposit/blob/master/diagrams/activity2.png)
  * [Код](https://github.com/UnVeh/reposit/blob/master/diagrams/activity2.puml)
 
