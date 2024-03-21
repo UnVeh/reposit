@@ -3,24 +3,24 @@ skinparam activity {
     DiamondBackgroundColor LightBlue
 }
 start
-
-#AntiqueWhite:Нажать на кнопку P;
-#AntiqueWhite:Нажать на иконку палитры рядом с надписью;
-#AntiqueWhite:Выбрать цвет;
-#AntiqueWhite:Нажать "OK";
-#AntiqueWhite:Поставить галочку напротив надписи;
-#AntiqueWhite:Нажать "OK";
-#AntiqueWhite:Выбрать и нарисовать фигуру;
-if (Внутренний цвет фигуры - выбранный цвет?) then (да)
-#Cornsilk:Галочка поставлена напротив надписи "Основной цвет";
+#AntiqueWhite:Пользователь реагирует на приложение;
+if (Движение курсора) then (да)
+#Business:Выбрать заливку;
+#Business:Навести курсор на холст;
 else (нет)
-if (Цвет линии фигуры поменял цвет?) then (да)
-#Cornsilk:Галочка поставлена напротив надписи "Цвет обводки";
-else (нет)
-#Cornsilk:Галочка ни где не поставлена;
-#Cornsilk:Необходимо поставить галочку, чтобы фигура поменяла цвет;
 endif
+    if (Нажата кнопка) then (нет)
+    #Business:Курсор находится в движении;
+    kill
+    else (да)
+        if (Кнопка отпущена) then (нет)
+        #Business:Курсор находится в движении;
+        kill
+        else (да)
+            if (Объект поменял цвет) then (да)
+                else (нет)
+                #Business:Цвет поменял холст;
+               
 endif
-#AntiqueWhite:Фигура определенного цвета на холсте;
 stop
 @enduml
