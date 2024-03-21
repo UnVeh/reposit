@@ -3,18 +3,28 @@ skinparam activity {
     DiamondBackgroundColor LightBlue
 }
 start
-
-#AntiqueWhite:Нажать на иконку кисти или ластика;
-
-#AntiqueWhite:Нажать левой кнопкой мыши на холст;
-#AntiqueWhite:Двигать мышкой на хосте;
-if (Появилась линия черного цвета) then (да)
-#Cornsilk:Была выбрана кисть;
+#AntiqueWhite:Пользователь реагирует на приложение;
+if (Движение курсора) then (да)
+#Business:Выбрать инструмент;
+#Business:Навести курсор на холст;
 else (нет)
-#Cornsilk:Был выбран ластик,
-для рисования необходимо выбрать кисть;
 endif
-#AntiqueWhite:Отпустить кнопку мыши;
-#AntiqueWhite:Линия на холсте;
+    if (Нажата кнопка) then (нет)
+    #Business:Курсор находится в движении;
+    kill
+    else (да)
+    #Business:Двинуть мышь;
+        if (Есть линия?) then (нет)
+        #Business:Выбрана не кисть;
+        kill
+
+        else (да)
+
+        if (Кнопка отпущена) then (да)
+        #Business:Линия остановилась;
+        else (нет)
+        #Business:Продолжить рисовать линию;
+
+endif
 stop
 @enduml
