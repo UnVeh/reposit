@@ -1,4 +1,5 @@
 @startuml
+
 skinparam actor {
     BackgroundColor OrangeRed/Orange
     BorderColor Orange
@@ -15,61 +16,32 @@ left to right direction
 
 actor User as User
 
-rectangle App #AliceBlue/LightBlue {
-    usecase "Холст" as Canvas
-rectangle "Меню" #LemonChiffon{
-rectangle File #Plum {
-    usecase Save
-    usecase Open
-    usecase Exit
-
-    Canvas <.. File
-    User --> "Меню"
-}
-
-rectangle Edit #Plum {
-    usecase Undo
-    usecase Clean
-
-    Canvas <.. Edit
-}
-
-}
-
-rectangle "Панель с инструментами" as ins #Gainsboro{
-rectangle "Панель с цветами" as col #Bisque {
-    usecase "Цвета" 
-    usecase "Палитра" as pal
-    usecase "Кнопки изменения цвета" 
-    
-     
-    User --> col
-}
-    usecase "Кнопки изменения размера" as ch
-    usecase "Фигуры" as f
-    usecase "Ластик" as eraser
-    usecase "Кисть" as brush
-    usecase "Буфер" as bf
-
-    User --> eraser
-    User --> brush
-    User --> bf
+rectangle "App"#AliceBlue/LightBlue {
+    usecase "Использование Кисти" as br
+    usecase "Использование Ластика" as er
+    usecase "Использование Фигуры" as f
+    usecase "Использование Заливки" as z
+    usecase "Сохранение файла" as save
+    usecase "Открытие файла" as open
+    usecase "Отмена действия" as undo
+    usecase "Выбор цвета" as col
+    usecase "Рисование" as draw
+    User --> br
+    User --> er
     User --> f
-    User --> ch
-    col ..> f
-    ch ..> brush
-    ch ..> eraser
-    f ..> bf
-    col ..> brush
-    f ..> Canvas
-
-    eraser ..> Canvas
-    brush ..> Canvas
-    brush ..> bf
-    brush ..> bf
-    bf ..> col
-}
-}
-
+    User --> z
+    User --> save
+    User --> open
+    User --> undo
+    User --> col
+    br .. draw
+    col .. br
+    col .. f
+    col .. z
+    er .. draw
+    z .. draw
+    f .. draw
     
+}
+
 @enduml
