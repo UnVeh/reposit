@@ -3,17 +3,28 @@ skinparam activity {
     DiamondBackgroundColor LightBlue
 }
 start
+#AntiqueWhite:Пользователь реагирует на приложение;
+if (Движение курсора) then (да)
+#Business:Выбрать фигуру;
+#Business:Навести курсор на холст;
+else (нет)
+endif
+    if (Нажата кнопка) then (нет)
+    #Business:Курсор находится в движении;
+    kill
+    else (да)
+    #Business:Двинуть мышь, придавая нужную форму фигуре;
+        if (Есть фигура?) then (нет)
+        #Business:Выбрана не фигура;
+        kill
 
-#AntiqueWhite:Нажать на иконку фигуры;
-if (Зажата левая клавиша мыши на холсте?) then (да)
-else (нет)
-#Cornsilk:Зажать левую клавишу миши на холсте;
+        else (да)
+
+        if (Кнопка отпущена) then (да)
+        #Business:Фигура приняла статическое положение;
+        else (нет)
+        #Business:Продолжить двигать мышью, меняя форму фигуры;
+
 endif
-#AntiqueWhite:Двинуть мышь в одно из направлений;
-if (Кнопка мыши не зажата?) then (да)
-else (нет)
-#Cornsilk:Отпустить кнопку миши;
-endif
-#AntiqueWhite:Фигура приняла статическое положение на холсте;
 stop
 @enduml
