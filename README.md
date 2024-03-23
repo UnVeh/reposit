@@ -28,7 +28,7 @@
 
 ___
 
-### [Описание функциональных моделей][https://github.com/UnVeh/reposit/blob/master/docs/functions.md]
+### [Описание функциональных моделей](https://github.com/UnVeh/reposit/blob/master/docs/functions.md)
 
 
 
