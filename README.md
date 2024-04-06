@@ -30,6 +30,10 @@ ___
 
 ### [Описание функциональных моделей](https://github.com/UnVeh/reposit/blob/master/docs/functions.md)
 
+___
+
+### [Описание структурных моделей](https://github.com/UnVeh/reposit/blob/master/docs/struct.md)
+
 
 
 
