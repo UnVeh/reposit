@@ -1,5 +1,5 @@
 # Внутренняя структура приложения
-[!Class diagram](https://github.com/UnVeh/reposit/blob/master/diagrams/class.png)
+![Class diagram](https://github.com/UnVeh/reposit/blob/master/diagrams/class.png)
 ## Данная диаграмма классов представляет собой описание структуры и взаимодействия классов в приложении для рисования.
 
 ### Она включает в себя следующие классы:
@@ -94,7 +94,7 @@
 
 # Диаграмма компонентов
 
-[!Komp diagram](https://github.com/UnVeh/reposit/blob/master/diagrams/komp.png)
+![Komp diagram](https://github.com/UnVeh/reposit/blob/master/diagrams/komp.png)
 
 ## Диаграмма представляет собой описание компонентов и их взаимосвязей в приложении для работы с холстом рисования.
 
