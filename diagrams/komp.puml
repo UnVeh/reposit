@@ -1,0 +1,88 @@
+@startuml
+
+class Application #Application {
+    - canvas: Canvas
+    - selectedTool: Tool
+    - selectedColor: Color
+    - selectedLineSize: int
+    - shapes: List<Shape>
+    + setTool(tool: Tool): void 
+    + setColor(color: Color): void
+    + setLineSize(size: int): void
+    + createShape(x: int, y: int): void
+    + modifyShape(shape: Shape): void
+    + fillShape(shape: Shape): void
+    + fillCanvas(): void
+    + saveImage(filePath: String): void
+    + openImage(filePath: String): void
+    + clearCanvas(): void
+    + undo(): void
+}
+
+enum Tool #Strategy {
+    LINE
+    CIRCLE
+    RECTANGLE
+    TRIANGLE
+}
+
+enum Color #Strategy {
+    RED
+    BLUE
+    GREEN
+    // ...
+}
+
+class Shape #Technology {
+    - fillColor: Color
+    + setFill(color: Color): void
+}
+
+class LineShape #Business {
+    + draw(): void
+    + move(x: int, y: int): void
+}
+
+class CircleShape #Business {
+    + draw(): void
+    + move(x: int, y: int): void
+    + resize(width: int, height: int): void
+}
+
+class RectangleShape #Business {
+    + draw(): void
+    + move(x: int, y: int): void
+    + resize(width: int, height: int): void
+}
+
+class TriangleShape #Business {
+    + draw(): void
+    + move(x: int, y: int): void
+    + resize(width: int, height: int): void
+}
+
+class Canvas #Physical {
+    - shapes: List<Shape>
+    - fillColor: Color
+    + addShape(shape: Shape): void
+    + removeShape(shape: Shape): void
+    + fillCanvas(): void
+    + clearCanvas(): void
+    + draw(): void
+}
+
+Canvas --> Application::fillCanvas #red
+Canvas --> Application::clearCanvas #red
+Tool --> Application::setTool
+Color --> Application::setColor #green
+Shape --> Application::createShape #blue
+Shape --> Application::modifyShape #blue
+Shape --> Application::fillShape #blue
+Tool::LINE --> Application::setLineSize
+Shape <|.. LineShape
+Shape <|.. CircleShape
+Shape <|.. RectangleShape
+Shape <|.. TriangleShape
+Canvas *--> Shape
+
+@enduml

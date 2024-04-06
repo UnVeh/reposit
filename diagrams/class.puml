@@ -1,0 +1,131 @@
+
+@startuml
+class DrawingApp #Application {
+  - canvas: Canvas
+  - tools: Tool[]
+  - activeTool: Tool
+  - color: string
+  - toolSize: number
+  - undoManager: UndoManager
+  - fileLoader: FileLoader
+  - fileSaver: FileSaver
+  + fillCanvas(canvas: Canvas): void
+  + selectTool(tool: Tool): void
+  + setColor(color: string): void
+  + setToolSize(size: number): void
+  + createShape(shapeType: string): void
+  + moveFigure(figure: Figure, newX: number, newY: number): void
+  + fillShape(x: number, y: number, color: string): void
+  + saveFile(filename: string): void
+  + openFile(filename: string): void
+  + undoLastAction(): void
+  + clearCanvas(): void
+}
+
+class Canvas #Physical {
+  - figures: Figure[]
+  - fillAreas: FillArea[]
+  + addFigure(figure: Figure): void
+  + removeFigure(figure: Figure): void
+  + addFillArea(fillArea: FillArea): void
+
+}
+
+class FillArea #Strategy {
+  - startX: number
+  - startY: number
+  - color: string
+  + getStartX(): number
+  + getStartY(): number
+  + getColor(): string
+  + setStartX(startX: number): void
+  + setStartY(startY: number): void
+  + setColor(color: string): void
+}
+
+abstract class Tool #Motivation {
+  + onMouseDown(event: MouseEvent): void
+  + onMouseMove(event: MouseEvent): void
+  + onMouseUp(event: MouseEvent): void
+}
+
+class BrushTool #Business {
+  + onMouseDown(event: MouseEvent): void
+  + onMouseMove(event: MouseEvent): void
+  + onMouseUp(event: MouseEvent): void
+}
+
+class EraserTool #Business {
+  + onMouseDown(event: MouseEvent): void
+  + onMouseMove(event: MouseEvent): void
+  + onMouseUp(event: MouseEvent): void
+}
+
+abstract class Figure #Motivation {
+  - x: number
+  - y: number
+  - color: string
+  + getX(): number
+  + getY(): number
+  + getColor(): string
+  + setPosition(x: number, y: number): void
+  + setColor(color: string): void
+}
+
+class Triangle #Implementation {
+  - base: number
+  - height: number
+  + getBase(): number
+  + getHeight(): number
+  + setBase(base: number): void
+  + setHeight(height: number): void
+}
+
+class Circle #Implementation {
+  - radius: number
+  + getRadius(): number
+  + setRadius(radius: number): void
+}
+
+class Rectangle #Implementation {
+  - width: number
+  - height: number
+  + getWidth(): number
+  + getHeight(): number
+  + setWidth(width: number): void
+  + setHeight(height: number): void
+}
+
+class UndoManager #Technology {
+  - actions: string[]
+  + addUndoAction(action: string): void
+  + undoLastAction(): void
+}
+
+class FileLoader #Technology {
+  + loadFile(filename: string): void
+}
+
+class FileSaver #Technology {
+  + saveFile(filename: string): void
+}
+
+
+FileLoader --> DrawingApp::openFile
+FileSaver --> DrawingApp::saveFile
+UndoManager --> DrawingApp::undoLastAction
+Tool --> Canvas
+Canvas o-- Figure
+Canvas o-- FillArea
+Tool <|-- BrushTool
+Tool <|-- EraserTool
+Tool --> DrawingApp::selectTool
+Tool --> DrawingApp::setToolSize
+Canvas --> DrawingApp::fillCanvas
+Canvas --> DrawingApp::clearCanvas
+Figure <|-- Triangle
+Figure <|-- Circle
+Figure <|-- Rectangle
+
+@enduml
+         
