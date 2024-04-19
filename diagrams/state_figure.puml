@@ -1,0 +1,28 @@
+@startuml
+state "Нажать на фигуру" as F
+state "Навести курсор на холст" as Move
+state "Нажать на кнопку" as Press
+state "Потянуть курсор в одну из сторон" as MC
+state "Фигура на холсте приняла статическое положение" as Stat
+state "Фигура меняет форму" as Continue
+state "Отпустить кнопку" as P
+state "Ожидание выбора фигуры" as W
+[*] --> W
+W --> F
+F : Выбрана фигура
+F --> Move
+Move : Курсор находится в движении
+Move --> Press
+Press : В момент нажатия курсор принимает статическое положение
+Press --> MC
+Press --> P
+
+Continue --> Press
+MC : Курсор находится в движении
+
+MC --> Continue
+
+P --> Stat
+Stat --> [*]
+
+@enduml

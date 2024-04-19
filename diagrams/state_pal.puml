@@ -1,0 +1,31 @@
+@startuml
+state fork_state <<fork>>
+state join_state <<join>>
+state "Нажать на цвет во всторенной в палитре" as UserClickOnColor 
+state "Нажать на цвет палитре" as UserChooseColor
+state "Отмена выбора цвета" as Nothing
+state "Подтверждение выбора цвета" as OK
+state "Инструмент поменял цвет" as ToolChangeColor
+state UserClickOnPalette as "Нажать на иконку палитры"
+state c <<choice>>
+[*] --> fork_state
+fork_state --> UserClickOnColor
+UserClickOnColor : Выбран цвет 
+fork_state --> UserClickOnPalette
+UserClickOnPalette : Открылось окно палитры
+UserClickOnPalette --> UserChooseColor
+UserChooseColor --> c
+UserChooseColor : Выбран цвет палитры
+
+c--> Nothing : Нажата кнопка "Отмена"
+c --> OK : Нажата кнопка "OK"
+OK --> join_state
+ToolChangeColor : Выбран цвет инструмента
+
+
+UserClickOnColor --> join_state
+join_state --> ToolChangeColor
+ToolChangeColor --> [*]
+Nothing --> [*]
+
+@enduml
