@@ -1,0 +1,34 @@
+@startuml
+skinparam app 30
+skinparam c 15
+skinparam f 10
+skinparam sequenceParticipant underline
+
+participant User #Business
+participant Application #Application
+participant Figure #Physical
+participant Canvas #Strategy
+
+activate Application
+User -> Application: Start drawing
+
+Application -> Canvas: CreateNewCanvas()
+
+activate Canvas
+Canvas --> User: Canvas created
+
+User -> Figure: ChooseFigure()
+activate Figure
+Figure --> Application: FigureIsChosen()
+
+deactivate Figure
+
+Application --> User : CursorChangeShape()
+User -> Canvas: DrawFigure(shape)
+
+Canvas --> User: ShowFigure(shape)
+
+deactivate Canvas
+deactivate Application
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+skinparam app 30
+skinparam c 15
+skinparam f 10
+skinparam sequenceParticipant underline
+
+participant User #Business
+participant Application #Application
+participant Eraser #Physical
+participant Canvas #Strategy
+
+activate Application
+User -> Application: Start drawing
+
+Application -> Canvas: CreateNewCanvas()
+
+activate Canvas
+Canvas --> User: Canvas created
+
+User -> Eraser: ChooseEraser()
+activate Eraser
+Eraser --> Application: EraserIsChosen()
+deactivate Eraser
+Application --> User : CursorChangeShape()
+
+User -> Canvas: Erasing(shape)
+Canvas --> User: AddEraseArea(shape)
+
+deactivate Canvas
+deactivate Application
+
+@enduml
