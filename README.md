@@ -34,6 +34,9 @@ ___
 
 ### [Описание структурных моделей](https://github.com/UnVeh/reposit/blob/master/docs/struct.md)
 
+___
+
+### [Описание поведенческих моделей](https://github.com/UnVeh/reposit/blob/master/docs/behavior.md)
 
 
 
