@@ -1,7 +1,7 @@
 # Тест №1.1: Проверка рисования окружности(позитивный)
 import unittest
 from tkinter import Tk
-from App.paint import Sketch
+from ..paint import Sketch
 import os
 import sys
 
