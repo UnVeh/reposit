@@ -45,7 +45,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install pillow
     - name: Check Pillow installation
-      run: python -c "import PIL; print('Pillow installed')"
+      run: python -c "from PIL import Image; print('Pillow installed')"
+
     - name: Run tests
       run: pytest
 
