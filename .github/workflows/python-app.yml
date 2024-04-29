@@ -49,6 +49,12 @@ jobs:
     - name: Run tests
       run: pytest
 
+    - name: Clear pip cache
+      run: |
+        python -m pip cache purge
+        rm -rf ~/.cache/pip
+
+
 
 
 
