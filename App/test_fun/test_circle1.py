@@ -3,6 +3,10 @@ import unittest
 from tkinter import Tk
 from App.paint import Sketch
 import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
 
 class TestSketch(unittest.TestCase):
     def setUp(self):
