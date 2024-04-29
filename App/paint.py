@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox, colorchooser, filedialog
 from PIL import Image, ImageGrab
+import tkinter as tk
 
 class Sketch:
     def __init__(self,
