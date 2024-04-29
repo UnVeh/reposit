@@ -46,6 +46,9 @@ jobs:
         pip install pillow
     - name: Check Pillow installation
       run: python -c "import PIL; print('Pillow installed')"
+    - name: Run tests
+      run: pytest
+
 
 
 
