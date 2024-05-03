@@ -39,7 +39,7 @@ jobs:
        ps -ef | grep Xvfb
        pwd
        ls -l App/tests/
-       coverage run -m unittest discover -s App/tests -p '*_test.py' --verbose
+       coverage run -m unittest discover -s App/tests -p 'test*.py' --verbose
       env:
        DISPLAY: ":99"
 
