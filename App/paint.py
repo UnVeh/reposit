@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox, colorchooser, filedialog
- from PIL import Image, ImageTk
+from PIL import Image, ImageTk
 
 
 class Sketch:
