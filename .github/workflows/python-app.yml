@@ -21,6 +21,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pytest
+        pip install pillow
         
     - name: Setup Xvfb
       run: |
@@ -34,7 +35,6 @@ jobs:
         
     - name: Run tests
       env:
-       DISPLAY: :99
+        DISPLAY: :99
       run: |
-       python -m pytest App/tests/
-
+        python -m pytest App/tests/
