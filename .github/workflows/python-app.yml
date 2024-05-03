@@ -1,40 +1,35 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Run tests
+name: Test Tkinter App
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+    
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.10'
+        python-version: 3.8
         
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install pytest
-        pip install pillow
-        
-    - name: Setup Xvfb
-      run: |
         sudo apt-get update
+        sudo apt-get install -y python3-tk
         sudo apt-get install -y xvfb
         
-    - name: Run Xvfb
-      run: |
-        Xvfb :99 -ac &
-        sleep 3
-        
     - name: Run tests
-      env:
-        DISPLAY: :99
       run: |
-        python -m pytest App/tests/
+        Xvfb :99 &
+        export DISPLAY=:99
+        python -m unittest discover -s tests -p '*_test.py'
