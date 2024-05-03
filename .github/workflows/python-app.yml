@@ -40,6 +40,12 @@ jobs:
        pip install pytest
        pip install pytest-cov
        pip install pillow
+
+    - name: Set up virtual display
+      uses: codecov/codecov-action@v3
+      with:
+       env_vars: DISPLAY=:99.0
+
     - name: Run tests
       run: |
        pytest --cov=./ --cov-report=xml
