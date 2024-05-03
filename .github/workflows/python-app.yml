@@ -46,6 +46,7 @@ jobs:
       with:
        env_vars: DISPLAY=:99.0
 
+
     - name: Run tests
       run: |
        pytest --cov=./ --cov-report=xml
