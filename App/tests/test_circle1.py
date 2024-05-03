@@ -19,7 +19,7 @@ class TestSketch(unittest.TestCase):
         event = type('Event', (), {'x': 200, 'y': 200})()
         self.sketch.circle_ranging(event)
 
-        # Проверяем, что создан правильный объект на холсте
+        # Проверяем,что создан правильный объект на холсте
         self.assertEqual(len(self.sketch.temp), 1)
         oval = self.sketch.temp[0]
         self.assertEqual(self.sketch.make_canvas.coords(oval), [100, 100, 200, 200])
