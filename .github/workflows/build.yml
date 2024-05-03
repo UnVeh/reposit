@@ -31,8 +31,8 @@ jobs:
        Xvfb :99 -ac &
        ps -ef | grep Xvfb
        pwd
-       ls -l tests/
-       python -m unittest discover -s tests -p '*_test.py' --verbose
+       ls -l App/tests/
+       python -m unittest discover -s App/tests -p '*_test.py' --verbose
       env:
        DISPLAY: ":99"
 
