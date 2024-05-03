@@ -44,6 +44,16 @@ jobs:
       run: |
        coveralls
 
+    - name: Show coverage files
+      run: |
+       ls -l .coverage*
+
+    - name: Check Coveralls token
+      run: |
+       echo "COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}"
+
+
+
 
        
 
