@@ -28,6 +28,9 @@ jobs:
         
     - name: Run tests
       run: |
-        Xvfb :99 &
-        export DISPLAY=:99
-        python -m unittest discover -s tests -p '*_test.py'
+       Xvfb :99 &
+       export DISPLAY=:99
+       python -m unittest discover -s tests -p '*_test.py' --verbose
+      env:
+       PYTEST_ADDOPTS: "--maxfail=1 --no-success-flaky-report --log-cli-level=INFO"
+
