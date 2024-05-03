@@ -30,6 +30,8 @@ jobs:
        export DISPLAY=:99
        Xvfb :99 -ac &
        ps -ef | grep Xvfb
+       pwd
+       ls -l tests/
        python -m unittest discover -s tests -p '*_test.py' --verbose
       env:
        DISPLAY: ":99"
