@@ -34,6 +34,7 @@ jobs:
         
     - name: Run tests
       env:
-        DISPLAY: :99
+       DISPLAY: :99
       run: |
-        python -m pytest tests/
+       python -m pytest App/tests/
+
