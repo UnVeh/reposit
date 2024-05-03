@@ -40,7 +40,7 @@ ___
 
 
 [![CTest Tkinter App](https://github.com/UnVeh/reposit/actions/workflows/build.yml/badge.svg)](https://github.com/UnVeh/reposit/actions/workflows/python-app.yml)
-[![Coverage Status](https://coveralls.io/repos/github/UnVeh/reposit/workflows/build/badge.svg?branch=master)](https://coveralls.io/github/UnVeh/reposit/workflows/build?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/UnVeh/reposit/badge.svg?branch=master)](https://coveralls.io/github/UnVeh/reposit?branch=master)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=UnVeh_reposit&metric=alert_status)](https://sonarcloud.io/dashboard?id=UnVeh_reposit)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=UnVeh_reposit&metric=bugs)](https://sonarcloud.io/summary/new_code?id=UnVeh_reposit)
 [![Code smells](https://sonarcloud.io/api/project_badges/measure?project=UnVeh_reposit&metric=code_smells)](https://sonarcloud.io/dashboard?id=UnVeh_reposit)
