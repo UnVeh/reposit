@@ -26,5 +26,4 @@ class TestColorPalette(unittest.TestCase):
         # Проверяем, что self.fill_color_line содержит выбранный цвет
         self.assertEqual(self.sketch.fill_color_line, desired_color)
 
-if __name__ == '__main__':
-    unittest.main()
+
