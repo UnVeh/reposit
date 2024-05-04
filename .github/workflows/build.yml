@@ -57,7 +57,9 @@ jobs:
 
     - name: Show coverage files
       run: |
-       ls -l .coverage*
+       pwd
+       ls -l
+      working-directory: ./App
 
     - name: Check Coveralls token
       run: |
