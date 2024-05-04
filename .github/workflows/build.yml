@@ -40,7 +40,8 @@ jobs:
        ps -ef | grep Xvfb
        pwd
        ls -l App/tests/
-       coverage run --omit=App/paint.py --source=App/tests run_tests.py
+       cd App/tests
+       coverage run --omit=../paint.py --source=. ../run_tests.py
       env:
        DISPLAY: ":99"
 
