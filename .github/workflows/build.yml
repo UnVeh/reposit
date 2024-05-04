@@ -9,6 +9,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    env:
+      SONAR_SCANNER_VERSION: 4.6.1.2450 # Find the latest version in the "Linux" link on this page:
+                                        # https://sonarcloud.io/documentation/analysis/scan/sonarscanner/
+      SONAR_SERVER_URL: "https://sonarcloud.io"
+      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
     
     steps:
     - uses: actions/checkout@v2
@@ -17,6 +23,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
+
+    - name: install gcovr 5.0
+      run: |
+        pip install gcovr==5.0 # 5.1 is not supported
+    - name: Install sonar-scanner
+      uses: SonarSource/sonarcloud-github-c-cpp@v2
         
     - name: Install dependencies
       run: |
@@ -65,7 +77,6 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Put the name of your token here
       run: |
         sonar-scanner \
-          --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}" \
           --define sonar.coverageReportPaths=coverage.xml
 
 
