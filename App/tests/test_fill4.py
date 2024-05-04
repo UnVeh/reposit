@@ -37,6 +37,5 @@ class Event:
         self.y = y
         self.canvas = canvas
 
-if __name__ == '__main__':
-    unittest.main()
+
 
