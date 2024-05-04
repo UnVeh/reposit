@@ -1,4 +1,4 @@
-name: Test Tkinter App
+name: CI/CD GitHub Actions
 
 on:
   push:
