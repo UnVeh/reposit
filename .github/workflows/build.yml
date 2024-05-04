@@ -44,10 +44,6 @@ jobs:
       env:
        DISPLAY: ":99"
 
-    - name: Install cursor themes
-      run: sudo apt-get update && sudo apt-get install -y xorg-x11-cursor-themes
-
-
     - name: Upload coverage to Coveralls
       env:
        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
