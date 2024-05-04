@@ -27,6 +27,3 @@ class TestCircleRanging(unittest.TestCase):
 
         # Проверяем, что temp остался пустым
         self.assertEqual(sketch.temp, [])
-
-if __name__ == '__main__':
-    unittest.main()
