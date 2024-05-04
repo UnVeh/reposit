@@ -40,7 +40,7 @@ jobs:
        ps -ef | grep Xvfb
        pwd
        ls -l App/tests/
-       coverage run --omit=App/paint.py --source=App/tests -m unittest discover -s App/tests -p 'test_*.py' -v
+       coverage run --omit=App/paint.py --source=App/tests run_tests.py
       env:
        DISPLAY: ":99"
 
