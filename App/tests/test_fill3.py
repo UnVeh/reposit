@@ -43,5 +43,3 @@ class Event:
         self.x = x
         self.y = y
 
-if __name__ == '__main__':
-    unittest.main()
