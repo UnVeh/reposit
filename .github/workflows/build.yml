@@ -39,11 +39,8 @@ jobs:
        Xvfb :99 -ac &
        ps -ef | grep Xvfb
        pwd
-       ls -l App
-       cd App
-       coverage run --omit=paint.py --source=. run_tests.py
-      env:
-       DISPLAY: ":99"
+       ls -l App/tests/
+       coverage run --omit=App/paint.py --source=App/tests -m unittest discover -s App/tests -p 'test_*.py' -v
 
     - name: Install coveralls
       run: |
