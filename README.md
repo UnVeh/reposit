@@ -38,6 +38,8 @@ ___
 
 ### [Описание поведенческих моделей](https://github.com/UnVeh/reposit/blob/master/docs/behavior.md)
 
+___
+
 
 [![CTest Tkinter App](https://github.com/UnVeh/reposit/actions/workflows/build.yml/badge.svg)](https://github.com/UnVeh/reposit/actions/workflows/python-app.yml)
 [![Coverage Status](https://coveralls.io/repos/github/UnVeh/reposit/badge.svg?branch=master)](https://coveralls.io/github/UnVeh/reposit?branch=master)
