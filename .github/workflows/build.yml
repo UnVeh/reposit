@@ -41,7 +41,7 @@ jobs:
        pwd
        ls -l App
        cd App
-       coverage run --omit=paint.py --source=tests run_tests.py
+       coverage run --omit=paint.py --source=. run_tests.py
       env:
        DISPLAY: ":99"
 
