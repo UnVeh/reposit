@@ -28,5 +28,3 @@ class TestSketch(unittest.TestCase):
         self.assertEqual(self.sketch.old_x, 20)
         self.assertEqual(self.sketch.old_y, 20)
 
-if __name__ == '__main__':
-    unittest.main()
