@@ -2,7 +2,7 @@
 import unittest
 from unittest.mock import MagicMock
 import tkinter
-from App.paint import Sketch
+from paint import Sketch
 import os
 
 class TestSketch(unittest.TestCase):
