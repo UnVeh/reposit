@@ -30,5 +30,3 @@ class TestSketch(unittest.TestCase):
         # Проверяем, что функция не вызвала исключений
         self.assertIsNone(mock_canvas_instance.create_oval.call_args)
 
-if __name__ == '__main__':
-    unittest.main()
