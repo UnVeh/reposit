@@ -29,5 +29,3 @@ class TestCircleRangingAddToTemp(unittest.TestCase):
     def tearDown(self):
         self.root.destroy()
 
-if __name__ == '__main__':
-    unittest.main()
