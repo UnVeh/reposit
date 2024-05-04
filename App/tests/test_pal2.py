@@ -26,5 +26,3 @@ class TestColorPalette(unittest.TestCase):
             self.sketch.colors(idx)
             self.assertEqual(self.sketch.fill_color_line, color)
 
-if __name__ == '__main__':
-    unittest.main()
