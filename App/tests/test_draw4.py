@@ -24,15 +24,14 @@ class TestSketch(unittest.TestCase):
         e = MagicMock()
         e.x = 20
         e.y = 20
-        try:
-            self.sketch.draw_with_brush(e)
-        except Exception:
-            self.fail("draw_with_brush raised an exception with invalid parameters")
+        self.sketch.draw_with_brush(e)
 
         self.sketch.make_canvas.create_line.assert_called_with(10, 10, 20, 20, fill="not_a_valid_color", width=-5, smooth=True, capstyle="round")
         self.assertEqual(self.sketch.old_x, 20)
         self.assertEqual(self.sketch.old_y, 20)
         self.assertEqual(len(self.sketch.temp), 1)
         self.assertIn(self.sketch.make_canvas.create_line.return_value, self.sketch.temp)
+
+i
 
 
