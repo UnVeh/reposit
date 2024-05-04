@@ -28,5 +28,9 @@ class TestSketch(unittest.TestCase):
     def tearDown(self):
         self.root.destroy()
 
+    def test_main(self):
+        if __name__ == '__main__':
+            unittest.main()
+
 if __name__ == '__main__':
     unittest.main()
