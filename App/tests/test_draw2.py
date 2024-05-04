@@ -31,5 +31,4 @@ class TestSketch(unittest.TestCase):
         self.assertEqual(len(self.sketch.temp), 1)
         self.assertIn(self.sketch.make_canvas.create_line.return_value, self.sketch.temp)
 
-if __name__ == '__main__':
-    unittest.main()
+
