@@ -30,6 +30,5 @@ class TestSketch(unittest.TestCase):
         self.assertEqual(self.sketch.old_y, 20)
         self.assertEqual(len(self.sketch.temp), 0)
 
-if __name__ == '__main__':
-    unittest.main()
+
 
