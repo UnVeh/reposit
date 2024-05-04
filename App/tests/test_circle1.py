@@ -6,7 +6,7 @@ import os
 
 class TestSketch(unittest.TestCase):
     def setUp(self):
-        # Изменяем рабочую директорию на уровень выше, чтобы папка App была доступна
+        # Изменяем рабочую директорию на уровень выше, чтобы папка App была доступна.
         os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
         self.root = Tk()
@@ -28,9 +28,3 @@ class TestSketch(unittest.TestCase):
     def tearDown(self):
         self.root.destroy()
 
-    def test_main(self):
-        if __name__ == '__main__':
-            unittest.main()
-
-if __name__ == '__main__':
-    unittest.main()
