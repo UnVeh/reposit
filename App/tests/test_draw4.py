@@ -31,7 +31,3 @@ class TestSketch(unittest.TestCase):
         self.assertEqual(self.sketch.old_y, 20)
         self.assertEqual(len(self.sketch.temp), 1)
         self.assertIn(self.sketch.make_canvas.create_line.return_value, self.sketch.temp)
-
-
-
-
