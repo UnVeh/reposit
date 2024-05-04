@@ -41,7 +41,9 @@ jobs:
        pwd
        ls -l App/tests/
        coverage run --omit=App/paint.py --source=App/tests -m unittest discover -s App/tests -p 'test_*.py' -v
-
+      env:
+       DISPLAY: ":99"
+       
     - name: Install coveralls
       run: |
         python -m pip install --upgrade pip
