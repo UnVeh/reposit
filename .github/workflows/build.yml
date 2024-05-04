@@ -94,7 +94,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-c-cpp@v2
       - name: Run tests to generate coverage statistics
         run: |
-          ./App/tests
+          python -m unittest discover -s App/tests -p 'test_*.py' -v
       - name: Collect coverage into one XML report
         run: |
           gcovr --sonarqube > coverage.xml
