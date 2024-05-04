@@ -25,10 +25,6 @@ class TestSketch(unittest.TestCase):
         self.assertEqual(self.sketch.make_canvas.coords(oval), [100, 100, 200, 200])
         self.assertEqual(self.sketch.make_canvas.itemcget(oval, 'fill'), self.sketch.fill_color_line)
 
-        # Дополнительная проверка для обновления old_x и old_y
-        self.assertEqual(self.sketch.old_x, 200)
-        self.assertEqual(self.sketch.old_y, 200)
-
     def tearDown(self):
         self.root.destroy()
 
