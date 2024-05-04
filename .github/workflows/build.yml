@@ -69,5 +69,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
-       args: -X -Dsonar.projectKey=your_actual_project_key -Dsonar.organization=your_actual_organization_key -Dsonar.scan.force-project=true
+       args: -X -Dsonar.projectKey=UnVeh_reposit -Dsonar.organization=unveh -Dsonar.scan.force-project=true
 
