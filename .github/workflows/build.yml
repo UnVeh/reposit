@@ -70,5 +70,14 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
       with:
-       args: -X -Dsonar.projectKey=UnVeh_reposit -Dsonar.organization=unveh -Dsonar.scan.force-project=true
+       args: >
+        -Dsonar.projectKey=UnVeh_reposit
+        -Dsonar.organization=unveh
+        -Dsonar.scan.force-project=true
+        -Dsonar.sources=./App/tests
+        -Dsonar.exclusions=**/*,./App/tests/**/*
+        -Dsonar.tests=./App/tests
+        -Dsonar.test.inclusions=**/test_*.py
+        -Dsonar.python.coverage.reportPaths=./coverage.xml
+
 
