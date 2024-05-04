@@ -39,8 +39,9 @@ jobs:
        Xvfb :99 -ac &
        ps -ef | grep Xvfb
        pwd
-       ls -l App/tests/
-       coverage run --omit=App/paint.py --source=App/tests ../run_tests.py
+       ls -l App
+       cd App
+       coverage run --omit=paint.py --source=tests run_tests.py
       env:
        DISPLAY: ":99"
 
