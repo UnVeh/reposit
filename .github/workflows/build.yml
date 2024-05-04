@@ -94,7 +94,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-c-cpp@v2
       - name: Run tests to generate coverage statistics
         run: |
-          ./tests/tests
+          ./tests
       - name: Collect coverage into one XML report
         run: |
           gcovr --sonarqube > coverage.xml
