@@ -17,6 +17,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
     - name: Install dependencies
       run: |
@@ -63,10 +68,5 @@ jobs:
       run: |
        echo "COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}"
 
-    - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
