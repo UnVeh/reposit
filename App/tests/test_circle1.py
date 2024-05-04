@@ -6,7 +6,7 @@ import os
 
 class TestSketch(unittest.TestCase):
     def setUp(self):
-        # Изменяем рабочую директорию на уровень выше, чтобы папка App была доступна.
+        # Изменяем рабочую директорию на уровень выше, чтобы папка App была доступна
         os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
         self.root = Tk()
@@ -19,11 +19,15 @@ class TestSketch(unittest.TestCase):
         event = type('Event', (), {'x': 200, 'y': 200})()
         self.sketch.circle_ranging(event)
 
-        # Проверяем,что создан правильный объект на холсте
+        # Проверяем, что создан правильный объект на холсте
         self.assertEqual(len(self.sketch.temp), 1)
         oval = self.sketch.temp[0]
         self.assertEqual(self.sketch.make_canvas.coords(oval), [100, 100, 200, 200])
         self.assertEqual(self.sketch.make_canvas.itemcget(oval, 'fill'), self.sketch.fill_color_line)
+
+        # Дополнительная проверка для обновления old_x и old_y
+        self.assertEqual(self.sketch.old_x, 200)
+        self.assertEqual(self.sketch.old_y, 200)
 
     def tearDown(self):
         self.root.destroy()
