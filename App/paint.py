@@ -134,7 +134,7 @@ class Sketch:
         if self.notation_box:
             if self.notation_box['state'] == DISABLED:
                 self.notation_box['state'] = NORMAL
-        self.make_canvas.config(cursor="TCROSS")
+        self.make_canvas.config(cursor="plus")
         self.make_canvas.unbind("<B1-Motion>")
         self.make_canvas.unbind("<ButtonRelease-1>")
         self.make_canvas.unbind("<Button-1>")
