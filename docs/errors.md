@@ -3,9 +3,9 @@
 * Описание:  ошибка, когда на холсте нет нарисованный объектов
 * Тест: test_circle3
 * Входные данные: 
-  self.sketch.old_x = None
-  self.sketch.old_y = None
-  event = type('Event', (), {'x': 100, 'y': 100})()
+     self.sketch.old_x = None
+     self.sketch.old_y = None
+     event = type('Event', (), {'x': 100, 'y': 100})()
 * Ожидаемый результат: не должно быть ошибок
 * Фактический результат: IndexError: tuple index out of range
 * Возможная причина: Это произошло потому что,  если список self.sketch.make_canvas.find_all() пуст, то есть на холсте нет никаких объектов, то происходит ошибка
