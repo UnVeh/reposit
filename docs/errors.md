@@ -67,7 +67,7 @@
 * Тест: test_pal3
 * Входные данные:
   
- self.sketch.fill_color_line = 'initial_color'
+   self.sketch.fill_color_line = 'initial_color'
  
 * Ожидаемый результат: None
 * Фактический результат: 'initial_color'
