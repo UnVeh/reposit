@@ -5,7 +5,7 @@ from tkinter import Tk
 from App.paint import Sketch
 import os
 
-class TestColorPalette(unittest.TestCase):
+class TestChooseColor(unittest.TestCase):
     def setUp(self):
         os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
         self.root = Tk()
