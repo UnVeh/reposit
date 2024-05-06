@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import Mock, patch
 import os
 
-class TestCircleRanging(unittest.TestCase):
+class TestNoFirstClick(unittest.TestCase):
     os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
     @patch('tkinter.Canvas.create_oval')
     def test_no_first_click(self, mock_create_oval):
