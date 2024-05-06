@@ -4,7 +4,7 @@ from tkinter import Tk
 from App.paint import Sketch
 import os
 
-class TestFillShape(unittest.TestCase):
+class TestFillNeighbors(unittest.TestCase):
     def setUp(self):
         os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
         self.root = Tk()
@@ -34,7 +34,6 @@ class TestFillShape(unittest.TestCase):
         self.assertEqual(new_color2, fill_color)
         self.assertEqual(new_color3, fill_color)
 
-# Вспомогательный класс для создания события мыши
 class Event:
     def __init__(self, x, y):
         self.x = x
