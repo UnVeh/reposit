@@ -17,7 +17,6 @@ class TestCircleRangingAddToTemp(unittest.TestCase):
         self.sketch.old_y = 50
         event = type('Event', (), {'x': 150, 'y': 150})()
 
-        # Вызов функции, которую тестируем
         self.sketch.circle_ranging(event)
 
         # Проверка ожидаемого результата
@@ -28,4 +27,3 @@ class TestCircleRangingAddToTemp(unittest.TestCase):
 
     def tearDown(self):
         self.root.destroy()
-
