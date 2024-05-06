@@ -28,7 +28,6 @@ class TestFillShape(unittest.TestCase):
         new_color = self.canvas.itemcget(oval_id, "fill")
         self.assertEqual(new_color, fill_color)
 
-# Вспомогательный класс для создания события мыши
 class Event:
     def __init__(self, x, y):
         self.x = x
