@@ -6,7 +6,6 @@ import os
 
 class TestSketch(unittest.TestCase):
     def setUp(self):
-        # Изменяем рабочую директорию на уровень выше, чтобы папка App была доступна.
         os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
         self.root = Tk()
