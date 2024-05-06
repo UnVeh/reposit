@@ -4,7 +4,7 @@ from tkinter import Tk
 from App.paint import Sketch
 import os
 
-class TestFillShape(unittest.TestCase):
+class TestFillShapes(unittest.TestCase):
     def setUp(self):
         os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
         self.root = Tk()
@@ -30,7 +30,6 @@ class TestFillShape(unittest.TestCase):
         self.assertEqual(outer_rect_color, fill_color)
         self.assertEqual(inner_rect_color, fill_color)
 
-# Создание фейкового события для функции fill_shape
 class Event:
     def __init__(self, canvas, x, y):
         self.x = x
