@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 from App.paint import Sketch
 import os
 
-class TestSketch(unittest.TestCase):
+class TestKoord(unittest.TestCase):
     def setUp(self):
         os.chdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
         self.root = tkinter.Tk()
