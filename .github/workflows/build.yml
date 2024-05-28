@@ -4,9 +4,9 @@ on:
   push:
     branches: 
       - master
-      - sonar-scan
   pull_request:
     branches: [ master ]
+    types: [opened, synchronize, reopened]
 
 jobs:
 
@@ -69,27 +69,15 @@ jobs:
     - name: Force update Coveralls badge
       run: curl https://coveralls.io/webhook?repo_token=${{ secrets.COVERALLS_REPO_TOKEN }} -d "payload[status]=done"
 
-  sonar-scan:
-    needs: test
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
-
-    # Выполняем анализ SonarCloud только при push в ветку sonar-scan
-    if: github.ref == 'refs/heads/sonar-scan'
-    
     steps:
-    - uses: actions/checkout@v2
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        args: >
-          -Dsonar.qualitygate.wait=true
-          -Dsonar.projectKey=UnVeh_reposit
-          -Dsonar.organization=unveh
-          -Dsonar.sources=./App/tests
-          -Dsonar.exclusions=/*,./App/tests//*
-          -Dsonar.tests=./App/tests
-          -Dsonar.test.inclusions=**/test_*.py
-          -Dsonar.python.coverage.reportPaths=./coverage.xml
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
