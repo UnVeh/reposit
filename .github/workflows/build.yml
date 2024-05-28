@@ -84,6 +84,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
+          -Dsonar.qualitygate.wait=true
           -Dsonar.projectKey=UnVeh_reposit
           -Dsonar.organization=unveh
           -Dsonar.sources=./App/tests
@@ -91,6 +92,7 @@ jobs:
           -Dsonar.tests=./App/tests
           -Dsonar.test.inclusions=**/test_*.py
           -Dsonar.python.coverage.reportPaths=./coverage.xml
+          -X
 
 
 
