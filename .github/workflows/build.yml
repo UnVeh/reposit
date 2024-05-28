@@ -66,22 +66,23 @@ jobs:
     - name: Force update Coveralls badge
       run: curl https://coveralls.io/webhook?repo_token=${{ secrets.COVERALLS_REPO_TOKEN }} -d "payload[status]=done"
 
+
     - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
+      uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        
       with:
-        projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
-        organization: ${{ secrets.SONAR_ORGANIZATION }}
-        args: >
-          -Dsonar.sources=./App/tests
-          -Dsonar.exclusions=/*,./App/tests//*
-          -Dsonar.tests=./App/tests
-          -Dsonar.test.inclusions=**/test_*.py
-          -Dsonar.python.coverage.reportPaths=./coverage.xml
-          -X
-
-
+       args: >
+        -Dsonar.projectKey=UnVeh_reposit
+        -Dsonar.organization=unveh
+        -Dsonar.scan.force-project=true
+        -Dsonar.sources=./App/tests
+        -Dsonar.exclusions=/*,./App/tests//*
+        -Dsonar.tests=./App/tests
+        -Dsonar.test.inclusions=**/test_*.py
+        -Dsonar.python.coverage.reportPaths=./coverage.xml 
+        -X
 
 
