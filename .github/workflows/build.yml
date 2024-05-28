@@ -66,7 +66,6 @@ jobs:
     - name: Force update Coveralls badge
       run: curl https://coveralls.io/webhook?repo_token=${{ secrets.COVERALLS_REPO_TOKEN }} -d "payload[status]=done"
 
-
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
