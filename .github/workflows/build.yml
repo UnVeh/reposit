@@ -72,14 +72,15 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
-        projectKey: UnVeh_reposit
-        organization: unveh
+        projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+        organization: ${{ secrets.SONAR_ORGANIZATION }}
         args: >
           -Dsonar.sources=./App/tests
           -Dsonar.exclusions=/*,./App/tests//*
           -Dsonar.tests=./App/tests
           -Dsonar.test.inclusions=**/test_*.py
           -Dsonar.python.coverage.reportPaths=./coverage.xml
+
 
 
 
