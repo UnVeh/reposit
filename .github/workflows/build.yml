@@ -7,6 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
+
   test:
     runs-on: ubuntu-latest
     
@@ -66,6 +67,12 @@ jobs:
     - name: Force update Coveralls badge
       run: curl https://coveralls.io/webhook?repo_token=${{ secrets.COVERALLS_REPO_TOKEN }} -d "payload[status]=done"
 
+  sonar-scan:
+    needs: test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
@@ -81,7 +88,6 @@ jobs:
           -Dsonar.test.inclusions=**/test_*.py
           -Dsonar.python.coverage.reportPaths=./coverage.xml
 
-          -X
 
 
 
