@@ -83,6 +83,7 @@ jobs:
           -Dsonar.test.inclusions=**/test_*.py
           -Dsonar.python.coverage.reportPaths=./coverage.xml
           -Dsonar.branch.name=${{ github.head_ref }}
+          -X
 
 
 
