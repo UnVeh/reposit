@@ -73,6 +73,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
 
+    # Выполняем анализ SonarCloud только при push в ветку sonar-scan
     if: github.ref == 'refs/heads/sonar-scan'
     
     steps:
@@ -92,8 +93,3 @@ jobs:
           -Dsonar.tests=./App/tests
           -Dsonar.test.inclusions=**/test_*.py
           -Dsonar.python.coverage.reportPaths=./coverage.xml
-          -X
-
-
-
-
