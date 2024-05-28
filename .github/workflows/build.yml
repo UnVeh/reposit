@@ -82,5 +82,6 @@ jobs:
         -Dsonar.tests=./App/tests
         -Dsonar.test.inclusions=**/test_*.py
         -Dsonar.python.coverage.reportPaths=./coverage.xml
+        -Dsonar.scanAllFiles=true
 
 
