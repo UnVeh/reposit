@@ -56,31 +56,19 @@ jobs:
        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
       run: coveralls
 
-    - name: Show coverage files
-      run: |
-       pwd
-       ls -l
-      working-directory: ./App
-
-    - name: Check Coveralls token
-      run: |
-       echo "COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}"
-
     - name: Force update Coveralls badge
       run: curl https://coveralls.io/webhook?repo_token=${{ secrets.COVERALLS_REPO_TOKEN }} -d "payload[status]=done"
 
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        # Disable automatic analysis, as we are running it as part of CI
-        args: >
-          -Dsonar.pullrequest.branch=${{ github.head_ref }}
-          -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
-          -Dsonar.pullrequest.base=${{ github.base_ref }}
-          -Dsonar.pullrequest.provider=github
-          -Dsonar.pullrequest.github.repository=${{ github.repository }}
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env: 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
