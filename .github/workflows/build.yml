@@ -2,7 +2,9 @@ name: CI/CD GitHub Actions
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - master
+      - sonar-scan
   pull_request:
     branches: [ master ]
 
@@ -70,6 +72,8 @@ jobs:
   sonar-scan:
     needs: test
     runs-on: ubuntu-latest
+
+    if: github.ref == 'refs/heads/sonar-scan'
     
     steps:
     - uses: actions/checkout@v2
