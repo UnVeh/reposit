@@ -69,19 +69,18 @@ jobs:
     - name: Force update Coveralls badge
       run: curl https://coveralls.io/webhook?repo_token=${{ secrets.COVERALLS_REPO_TOKEN }} -d "payload[status]=done"
 
-    - name: Отключить автоматический анализ
-      run: |
-        curl -X POST -u "${{ secrets.SONAR_TOKEN }}:" \
-        -H "Content-Type: application/json" \
-        -d '{"key":"sonar.pullrequest.forceReanalysis":"true"}' \
-        https://sonarcloud.io/api/projects/set_quality_gate
-
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
       with:
-        args: -X
+        # Disable automatic analysis, as we are running it as part of CI
+        args: >
+          -Dsonar.pullrequest.branch=${{ github.head_ref }}
+          -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
+          -Dsonar.pullrequest.base=${{ github.base_ref }}
+          -Dsonar.pullrequest.provider=github
+          -Dsonar.pullrequest.github.repository=${{ github.repository }}
+
 
