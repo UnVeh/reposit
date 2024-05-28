@@ -74,6 +74,7 @@ jobs:
         
       with:
        args: >
+        -X
         -Dsonar.projectKey=UnVeh_reposit
         -Dsonar.organization=unveh
         -Dsonar.scan.force-project=true
