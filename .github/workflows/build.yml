@@ -75,13 +75,12 @@ jobs:
         args: >
           -Dsonar.projectKey=UnVeh_reposit
           -Dsonar.organization=unveh
-          -Dsonar.scan.force-project=true
           -Dsonar.sources=./App/tests
           -Dsonar.exclusions=/*,./App/tests//*
           -Dsonar.tests=./App/tests
           -Dsonar.test.inclusions=**/test_*.py
           -Dsonar.python.coverage.reportPaths=./coverage.xml
-          -Dsonar.branch.name=${{ github.head_ref }}
+
           -X
 
 
